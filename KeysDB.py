@@ -2,8 +2,9 @@ from UsersDB import set_user_value, get_user_info
 from datetime import datetime, timedelta
 from Functions import duration
 import random, string, os, psycopg
+from dotenv import load_dotenv
 
-
+load_dotenv()
 def get_connection():
     return psycopg.connect(os.environ.get("DB_URL"))
 
