@@ -2,10 +2,11 @@ import psycopg
 from dotenv import load_dotenv
 from random import randint
 import os
+
 load_dotenv()
 
 def get_connection():
-    return psycopg.connect(os.getenv("DB_URL"))
+    return psycopg.connect(os.environ.get("DB_URL"))
 
 #CREATE THE TABLE
 def create_users_table():
