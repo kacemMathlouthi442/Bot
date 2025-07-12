@@ -1658,7 +1658,7 @@ if __name__ == "__main__":
     create_keys_table()
     while True:
         try:
-            application = ApplicationBuilder().token("7877567060:AAEOD-Vw95CEj9hQ_ANQbslH2kg9d5QnIwU").build()
+            application = ApplicationBuilder().token(BOT_TOKEN).build()
             application.add_handler(CommandHandler("keys", keys))
             application.add_handler(CommandHandler("cancel", cancel_fsm))
             application.add_handler(CallbackQueryHandler(reset_get_keys, pattern="^reset$|^get$"))
