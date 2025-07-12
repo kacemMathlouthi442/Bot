@@ -5,7 +5,7 @@ import random, string, os, psycopg
 
 
 def get_connection():
-    return psycopg.connect(os.getenv("DB_URL"))
+    return psycopg.connect(os.environ.get("DB_URL"))
 
 #CREATE THE TABLE
 def create_keys_table():
