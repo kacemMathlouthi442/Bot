@@ -19,11 +19,13 @@ import ast
 from warnings import filterwarnings
 from telegram.warnings import PTBUserWarning
 import os, logging
+from dotenv import load_dotenv
 
 filterwarnings(action="ignore", message=r".*CallbackQueryHandler", category=PTBUserWarning)
 logging.basicConfig(level=logging.INFO)
+load_dotenv()
 
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
 # States for conversation handlers
 STEP1, STEP2, STEP3 = range(3)
